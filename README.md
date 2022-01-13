@@ -1,6 +1,6 @@
 # Wordle for Obsidian
 
-This is an [Obisidan](https://obsidian.md) plugin that allows you to play the [Wordle](https://www.powerlanguage.co.uk/wordle/) game directly from the editor!
+This is an [Obsidian](https://obsidian.md) plugin that allows you to play the [Wordle](https://www.powerlanguage.co.uk/wordle/) game directly from the editor!
 It has been developed for Obsidian **v0.13.19**, and tested on **Windows**.
 
 ## Installing
