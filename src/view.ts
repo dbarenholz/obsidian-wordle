@@ -23,6 +23,10 @@ export class WordleView extends ItemView {
     return "Wordle";
   }
 
+  getIcon(): string {
+    return "la:file-word-solid"
+  }
+
   async onOpen(): Promise<void> {
     console.log("[Wordle]: Opening view.")
 
