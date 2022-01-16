@@ -30,8 +30,8 @@ export default class WordlePlugin extends Plugin {
     // Add settings tab
     this.addSettingTab(new WordleSettingTab(this.app, this));
 
-    // Activate the view
-    await this.activateView();
+    // Activate the view (once layout is ready)
+    this.activateView();
   }
 
   /**
@@ -61,20 +61,22 @@ export default class WordlePlugin extends Plugin {
    * Taken from https://marcus.se.net/obsidian-plugin-docs/guides/custom-views
    * Activates the view and sets it (by default) in the sidebar on the right.
    */
-  async activateView(): Promise<void> {
-    // Detach possible dangling leaves
-    this.app.workspace.detachLeavesOfType(WORDLE_VIEW_TYPE);
+  activateView(): void {
+    this.app.workspace.onLayoutReady(async () => {
+      // Detach possible dangling leaves
+      this.app.workspace.detachLeavesOfType(WORDLE_VIEW_TYPE);
 
-    // Add a new leaf
-    await this.app.workspace.getRightLeaf(false).setViewState({
-      type: WORDLE_VIEW_TYPE,
-      active: true,
-    });
+      // Add a new leaf
+      await this.app.workspace.getRightLeaf(false).setViewState({
+        type: WORDLE_VIEW_TYPE,
+        active: true,
+      });
 
-    // Reveal the leaf
-    this.app.workspace.revealLeaf(
-      this.app.workspace.getLeavesOfType(WORDLE_VIEW_TYPE)[0]
-    );
+      // Reveal the leaf
+      this.app.workspace.revealLeaf(
+        this.app.workspace.getLeavesOfType(WORDLE_VIEW_TYPE)[0]
+      );
+    })
   }
 
 }
