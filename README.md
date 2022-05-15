@@ -1,3 +1,5 @@
+**NO LONGER MAINTAINED:** Wordle has been taken over by NYT, and I do not wish to support them in any way.
+
 # Wordle for Obsidian
 
 This is an [Obsidian](https://obsidian.md) plugin that allows you to play the [Wordle](https://www.powerlanguage.co.uk/wordle/) game directly from the editor!
