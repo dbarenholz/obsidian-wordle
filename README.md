@@ -1,5 +1,3 @@
-**NO LONGER MAINTAINED:** Wordle has been taken over by NYT, and I do not wish to support them in any way.
-
 # Wordle for Obsidian
 
 **NOTE: This is no longer actively maintained.**
