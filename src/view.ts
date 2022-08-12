@@ -37,7 +37,7 @@ export class WordleView extends ItemView {
 
     // Create a hidden iframe with correct source; add ID so we can style it with css
     const iframe = container.createEl("iframe")
-    iframe.src = "https://www.powerlanguage.co.uk/wordle/"
+    iframe.src = "https://www.nytimes.com/games/wordle/index.html"
     iframe.id = "wordle-iframe"
 
     // Gives cross-origin error

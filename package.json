@@ -1,7 +1,7 @@
 {
   "name": "obsidian-wordle",
-  "version": "0.0.1",
-  "description": "Creates a view where you can play Wordle.",
+  "version": "0.0.2",
+  "description": "Creates a view where you can play Wordle. No longer actively maintained.",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
