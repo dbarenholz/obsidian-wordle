@@ -7,10 +7,9 @@ export const WORDLE_VIEW_TYPE = "wordle-view";
  * Shows an iframe with the Wordle site!
  *
  * @author dbarenholz
- * @version 0.0.1
+ * @version 0.0.2
  */
 export class WordleView extends ItemView {
-  // Constructor
   constructor(leaf: WorkspaceLeaf) {
     super(leaf);
   }
@@ -39,25 +38,6 @@ export class WordleView extends ItemView {
     const iframe = container.createEl("iframe")
     iframe.src = "https://www.nytimes.com/games/wordle/index.html"
     iframe.id = "wordle-iframe"
-
-    // Gives cross-origin error
-    /*
-    iframe.addEventListener("load", () => {
-      console.log("[Wordle]: Wordle iframe loaded.")
-      console.log(iframe.contentWindow)
-      console.log(iframe.contentDocument)
-    })
-    */
-
-
-    // Gives cross-origin error
-    /*
-    this.registerDomEvent(iframe, 'load', () => {
-      console.log("[Wordle]: Wordle iframe loaded.")
-      console.log(iframe.contentWindow)
-      console.log(iframe.contentDocument)
-    })
-    */
   }
 
   async onClose(): Promise<void> {

@@ -1,17 +1,13 @@
 import { addIcon, Plugin } from "obsidian";
-import { WordleSettings, WordleSettingTab, DEFAULT_SETTINGS } from "./settings";
 import { WordleView, WORDLE_VIEW_TYPE } from "./view";
 
 /**
  * Wordle plugin.
  *
  * @author dbarenholz
- * @version 0.0.1
+ * @version 0.0.2
  */
 export default class WordlePlugin extends Plugin {
-  // The settings of the plugin.
-  public settings: WordleSettings;
-
   /**
    * Code that runs (once) when plugin is loaded.
    */
@@ -24,12 +20,6 @@ export default class WordlePlugin extends Plugin {
     // Register the view
     this.registerView(WORDLE_VIEW_TYPE, (leaf) => new WordleView(leaf))
 
-    // Load the settings
-    await this.loadSettings();
-
-    // Add settings tab
-    this.addSettingTab(new WordleSettingTab(this.app, this));
-
     // Activate the view (once layout is ready)
     this.activateView();
   }
@@ -41,20 +31,6 @@ export default class WordlePlugin extends Plugin {
     // Clean up after oneselves.
     this.app.workspace.detachLeavesOfType(WORDLE_VIEW_TYPE);
     console.log("[Wordle]: unloaded plugin.");
-  }
-
-  /**
-   * Loads the settings.
-   */
-  async loadSettings(): Promise<void> {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
-  }
-
-  /**
-   * Saves the settings.
-   */
-  async saveSettings(): Promise<void> {
-    await this.saveData(this.settings);
   }
 
   /**
